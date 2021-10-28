@@ -86,6 +86,10 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
+      racc (~> 1.4)
     puma (4.3.10)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -143,11 +147,15 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   listen (~> 3.2)
+  mini_portile2
+  nokogiri
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.4, >= 6.0.4.1)
