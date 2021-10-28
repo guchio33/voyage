@@ -17,7 +17,7 @@ const App: React.FC = () => {
     handleExecTest();
   }, []);
 
-  return( <><h1>{message}</h1><p>hello</p></>);
+  return( <><h1>{message}</h1></>);
 };
 
 export default App;
