@@ -1,9 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  content: MyText
+  Users: one
   image: MyString
+  place: MyString
+  city: MyString
+  genre: MyString
 
 two:
-  content: MyText
+  Users: two
   image: MyString
+  place: MyString
+  city: MyString
+  genre: MyString
