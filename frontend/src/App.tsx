@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
+//import React, { useEffect, useState } from "react";
+import PhotoForm from "./photo-form"
 
-import { execTest } from "lib/api/test";
+//import { execTest } from "lib/api/test";
 
 const App: React.FC = () => {
-  const [message, setMessage] = useState<string>("");
+  //const [message, setMessage] = useState<string>("");
 
-  const handleExecTest = async () => {
-    const res = await execTest();
+  //const handleExecTest = async () => {
+    //const res = await execTest();
 
-    if (res.status === 200) {
-      setMessage(res.data.message);
-    }
-  };
+    //if (res.status === 200) {
+    //  setMessage(res.data.message);
+    //}
+  //};
 
-  useEffect(() => {
-    handleExecTest();
-  }, []);
+  //useEffect(() => {
+  //  handleExecTest();
+  //}, []);
 
-  return( <><h1>{message}</h1></>);
+  return( <><PhotoForm></PhotoForm></>);
 };
 
 export default App;

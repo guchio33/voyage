@@ -9,21 +9,21 @@
 
 Post.create!([
     {
-        image: "写真1", 
-        place: "佐久島",
+        image: "sample.jpg", 
+        place_name: "佐久島",
         genre: "ドライブ",
-        city: "愛知"
+        prefecture: "愛知"
     },
     {
-        image: "写真2",
-        place: "下呂温泉",
+        image: "sample.jpg",
+        place_name: "下呂温泉",
         genre: "温泉",
-        city: "岐阜"
+        prefecture: "岐阜"
     },
     {
-        image: "写真3",
-        place: "地中海村",
+        image: "sample.jpg",
+        place_name: "地中海村",
         genre: "デート",
-        city: "三重"
+        prefecture: "三重"
     }
 ])
