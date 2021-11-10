@@ -4,8 +4,9 @@ const PhotoForm: React.FC = () => {
     const [photo, setPhoto] = useState<File>();
     const [preview, setPreview] = useState('');
     const [place, setPlace] = useState('');
+    const [prefecture, setPrefecture] = useState('');
     const [genre, setGenre] = useState('');
-    const [tags, setTags] = useState(['']);
+    const [tagName, setTagName] = useState(['']);
 
     const selectPhoto = useCallback((e) => {
         const selectedPhoto = e.target.files[0]
@@ -21,14 +22,14 @@ const PhotoForm: React.FC = () => {
     }, [])
 
     const addTag = () => {
-        let tags2 = [...tags]
+        let tags2 = [...tagName]
         tags2.push('')
-        setTags(tags2)
+        setTagName(tags2)
     }
     const deleteTag = () => {
-        let tags2 = [...tags]
+        let tags2 = [...tagName]
         tags2.pop()
-        setTags(tags2)
+        setTagName(tags2)
     }
 
     /*
@@ -43,7 +44,7 @@ const PhotoForm: React.FC = () => {
 
     const sendFormData = () => {
         //送信の仕方がわからないので、とりあえずコンソールに出力してます
-        console.log(place, genre, tags, photo);
+        console.log(place, prefecture, genre, tagName, photo);
     }
 
 
@@ -54,15 +55,17 @@ const PhotoForm: React.FC = () => {
 
             <p>場所：<input type="text" value={place} onChange={(e) => setPlace(e.target.value)} /></p>
 
+            <p>都道府県：<input type="text" value={prefecture} onChange={(e) => setPrefecture(e.target.value)} /></p>
+
             <p>ジャンル：<input type="text" value={genre} onChange={(e) => setGenre(e.target.value)} /></p>
 
 
             <p>タグ：</p>
-            {tags.map((tag, index) =>
+            {tagName.map((tag, index) =>
                 <p key={index}><input type="text" value={tag} onChange={(e) => {
-                    let tags2 = [...tags]
+                    let tags2 = [...tagName]
                     tags2[index] = e.target.value;
-                    setTags(tags2)
+                    setTagName(tags2)
                 }} />
                 </p>
             )}
