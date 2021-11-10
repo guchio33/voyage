@@ -7,4 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-post1=Post.create!( image: "写真１", place: "観光地1", genre: "ドライブ", city: "愛知")
+Post.create!([
+    {
+        image: "写真1", 
+        place: "佐久島",
+        genre: "ドライブ",
+        city: "愛知"
+    },
+    {
+        image: "写真2",
+        place: "下呂温泉",
+        genre: "温泉",
+        city: "岐阜"
+    },
+    {
+        image: "写真3",
+        place: "地中海村",
+        genre: "デート",
+        city: "三重"
+    }
+])
