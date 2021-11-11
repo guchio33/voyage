@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import axios from 'axios' 
 
 const PhotoForm: React.FC = () => {
     const [photo, setPhoto] = useState<File>();
@@ -32,18 +33,33 @@ const PhotoForm: React.FC = () => {
         setTagName(tags2)
     }
 
-    /*
-        const createFormData = () => {          //add
-            const formData = new FormData()
-            if (!label) return                    //labelがundefinedの場合早期リターン
-            formData.append('book[title]', title) // ポイント1！
-            formData.append('book[label]', label) // ポイント1！
-            return formData
-        }
-    */
 
-    const sendFormData = () => {
-        //送信の仕方がわからないので、とりあえずコンソールに出力してます
+    const createFormData = () => {      
+        const formData = new FormData()
+        if (!photo) return                    //photoがundefinedの場合早期リターン
+            formData.append('post[photo]', photo)
+            formData.append('post[place]', place)
+            formData.append('post[prefecture]', prefecture)
+            formData.append('post[genre]', genre)
+        return formData
+    }
+    
+
+    const sendFormData = async () => {
+        const url = 'http://localhost:3001/posts'
+        const data = await createFormData()   //formdataが作成されるのを待つ
+        const config = {
+          headers: {
+            'content-type': 'multipart/form-data'
+          }
+        }
+        axios.post(url, data, config)
+        .then(response => {
+          console.log(response)
+        }).catch(error => {
+          console.log(error)
+        })
+        //コンソールで動作確認用
         console.log(place, prefecture, genre, tagName, photo);
     }
 

@@ -9,25 +9,29 @@ class PostsController < ApplicationController
 
   #投稿を見る（get）
   def show
-    render json: @post
+    if @book
+      render json: { status: 200, book: @post }
+    else
+      render json: { status: 500}
+    end
   end
 
   #投稿を作成（post）
   def create 
     post = Post.new(post_params)
     if post.save
-      render json: post
+      render json: { status: 200, book: @post }
     else
-      render json: post.errors
+      render json: { status: 500 }
     end
   end
 
   #投稿を更新（put）
   def update
     if @post.update(post_params)
-      render json: @post
+      render json: { status: 200, book: @post }
     else
-      render json: @post.errors
+      render json: { status: 500 }
     end
   end
 
