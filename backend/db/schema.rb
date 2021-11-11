@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_11_10_044029) do
 
   create_table "posts", force: :cascade do |t|
-    t.string "image"
-    t.string "place_name"
+    t.string "photo"
+    t.string "place"
     t.string "prefecture"
     t.string "genre"
     t.datetime "created_at", precision: 6, null: false
