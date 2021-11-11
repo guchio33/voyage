@@ -59,7 +59,7 @@ const PhotoForm: React.FC = () => {
         }).catch(error => {
           console.log(error)
         })
-        //送信の仕方がわからないので、とりあえずコンソールに出力してます
+        //コンソールで動作確認用
         console.log(place, prefecture, genre, tagName, photo);
     }
 
