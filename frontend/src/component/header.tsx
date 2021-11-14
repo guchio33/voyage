@@ -18,6 +18,7 @@ export default function Headar() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            href="/"
           >
             <HomeIcon />
           </IconButton>
@@ -31,7 +32,6 @@ export default function Headar() {
               aria-label="account of current user"
               aria-haspopup="true"
               color="inherit"
-              href="/home"
             >
               <AccountCircle />
             </IconButton>
