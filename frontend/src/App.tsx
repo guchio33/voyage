@@ -1,27 +1,39 @@
 //import React, { useEffect, useState } from "react";
 import PhotoForm from "./photo-form";
 import Header from "./component/header";
-//import { execTest } from "lib/api/test";
+import Home from "./component/home";
+import AddIcon from "@mui/icons-material/Add";
+import Fab from "@mui/material/Fab";
+import { styled } from "@mui/material/styles";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App: React.FC = () => {
-  //const [message, setMessage] = useState<string>("");
-
-  //const handleExecTest = async () => {
-  //const res = await execTest();
-
-  //if (res.status === 200) {
-  //  setMessage(res.data.message);
-  //}
-  //};
-
-  //useEffect(() => {
-  //  handleExecTest();
-  //}, []);
+  const StyledFab = styled(Fab)({
+    position: "absolute",
+    textAlign: "left",
+    zIndex: 1,
+    top: "90%",
+    left: "80%",
+    right: 0,
+    margin: "0 auto",
+  });
 
   return (
     <>
-      <Header />
-      <PhotoForm />
+      <BrowserRouter>
+        <Header />
+
+        <StyledFab color="secondary" aria-label="add" href="/post">
+          {/*投稿ボタン */}
+
+          <AddIcon to="/post" />
+        </StyledFab>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/post" element={<PhotoForm />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

@@ -8,33 +8,36 @@ import HomeIcon from "@mui/icons-material/Home";
 
 export default function Headar() {
   return (
-    <AppBar position="static">
-      <Toolbar>
-        {/* ホームアイコン*/}
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="open drawer"
-          sx={{ mr: 2 }}
-        >
-          <HomeIcon />
-        </IconButton>
-
-        {/* ヘッダーの真ん中の隙間*/}
-        <Box sx={{ flexGrow: 1 }} />
-        <Box>
+    <>
+      <AppBar position="static">
+        <Toolbar>
+          {/* ホームアイコン*/}
           <IconButton
             size="large"
-            edge="end"
-            aria-label="account of current user"
-            aria-haspopup="true"
+            edge="start"
             color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
           >
-            <AccountCircle />
+            <HomeIcon />
           </IconButton>
-        </Box>
-      </Toolbar>
-    </AppBar>
+
+          {/* ヘッダーの真ん中の隙間*/}
+          <Box sx={{ flexGrow: 1 }} />
+          <Box>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="account of current user"
+              aria-haspopup="true"
+              color="inherit"
+              href="/home"
+            >
+              <AccountCircle />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </>
   );
 }
