@@ -43,3 +43,5 @@ gem 'mini_portile2'
 
 gem 'carrierwave'
 
+gem 'devise'
+gem 'devise_token_auth'
