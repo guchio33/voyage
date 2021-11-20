@@ -11,6 +11,7 @@ const Home: React.FC = () => {
   const fetchUserReq = async () => {
     try {
       const { data } = await fetchUsers(); //api/userからデータをもらう
+      console.log(data)
       return data;
     } catch (e) {
       console.log(e);
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const data = fetchUserReq();
     data.then((users) => {
-      setUserList(users);
+      setUserList(users?.posts);
     });
   }, []);
 
@@ -32,6 +33,7 @@ const Home: React.FC = () => {
           console.log(user);
           return (
             <p key={user.id}>
+              <img src={user.photo.url}/>
               {`${user.photo} ${user.place}${user.genre}${user.prefecture}`}
             </p>
           );

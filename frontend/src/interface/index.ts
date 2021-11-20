@@ -1,7 +1,13 @@
 export interface User {
   id: number;
-  photo: string;
+  photo:{
+    url:string
+  }
   place: string;
   genre: string;
   prefecture: string;
+}
+
+export interface UserApiJson {
+  posts: User[]
 }

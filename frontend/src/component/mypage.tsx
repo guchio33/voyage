@@ -35,24 +35,24 @@ const MyPage: React.FC = () => {
 
         //仮の投稿データをセット
         setPostList([
-            { id: 0, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 1, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 2, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 3, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 4, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 5, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 6, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 7, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 8, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 9, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 10, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 12, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 13, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 14, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 15, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 16, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 17, photo: "", place: 'test', genre: 'test', prefecture: 'test' },
-            { id: 18, photo: "", place: 'test', genre: 'test', prefecture: 'test' }
+            { id: 0, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 1, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 2, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 3, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 4, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 5, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 6, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 7, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 8, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 9, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 10, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 12, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 13, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 14, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 15, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 16, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 17, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' },
+            { id: 18, photo: {url:""}, place: 'test', genre: 'test', prefecture: 'test' }
         ])
 
     }, []);
