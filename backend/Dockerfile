@@ -1,18 +1,14 @@
-FROM ruby:2.6.5-alpine
+FROM ruby:3.0.0
 
-ENV LANG="C.UTF-8" \
-    PACKAGES="curl-dev build-base alpine-sdk tzdata sqlite-dev less ruby-dev nodejs"
+RUN apt-get update -qq && apt-get -y install \
+    build-essential \
+    libpq-dev
 
-RUN apk update && \
-    apk add --no-cache --update $PACKAGES
+RUN mkdir /backend
 
-WORKDIR /var/www
+COPY Gemfile /backend
+COPY Gemfile.lock /backend
 
-COPY ./ ./
+WORKDIR /backend
 
-RUN gem install bundler && \
-    bundle install -j4
-
-EXPOSE 3001
-
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3001"]
+RUN gem install bundler && bundle install

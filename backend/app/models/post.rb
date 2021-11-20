@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
-    mount_uploader :photo, PhotoUploader　#photoカラムとphotoアップローダーの紐付け
-    serialize :photo, JSON # SQLiteを使っているときはこの列を追記
+    mount_uploader :photo, PhotoUploaders　#photoカラムとphotoアップローダーの紐付け
 
     has_many :tag_maps, dependent: :destroy
     has_many :tags, through: :tag_maps
