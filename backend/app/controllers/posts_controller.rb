@@ -3,9 +3,8 @@ class PostsController < ApplicationController
 
   #全投稿を表示（get）
   def index
-    #posts = Post.all.order(:id)
-    #render json: posts
-    render json: { post: Post.all.order("created_at DESC") }
+    posts = Post.all.order(:id)
+    render json: posts
   end
 
   #投稿を見る（get）
@@ -52,7 +51,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:photo, :place, :prefecture, :genre)
+    params.require(:post).permit(photo:, :place, :prefecture, :genre)
   end
-  #{photo:[]}
 end
