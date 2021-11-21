@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create 
     post = Post.new(post_params)
     if post.save
-      render json: { status: 200, post: @post }
+      render json: { status: 200, post: post }
     else
       render json: { status: 500 }
     end

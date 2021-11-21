@@ -2,7 +2,8 @@ FROM ruby:3.0.0
 
 RUN apt-get update -qq && apt-get -y install \
     build-essential \
-    libpq-dev
+    libpq-dev \
+    imagemagick 
 
 RUN mkdir /backend
 
