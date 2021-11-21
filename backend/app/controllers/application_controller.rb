@@ -3,4 +3,6 @@ class ApplicationController < ActionController::API
 
         skip_before_action :verify_authenticity_token
         helper_method :current_user, :user_signed_in?
+        #skip_before_action :method_name, raise: false
+        
 end

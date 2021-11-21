@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { fetchUsers } from "../lib/api/user";
+import React, { useEffect, useState, useContext } from "react";
+import { fetchUsers } from "../../lib/api/user";
+import { AuthContext } from "App";
+
 //インターフェース
-import { User } from "../interface/index";
+import { Post } from "../../interface/index";
 
 const Home: React.FC = () => {
   //userリストの作成 インターフェースUser型
-  const [userList, setUserList] = useState<User[] | undefined>(undefined);
+  const [userList, setUserList] = useState<Post[] | undefined>(undefined);
+
+  const { isSignedIn, currentUser } = useContext(AuthContext);
 
   //APiサーバから送られてデータをもらう&例外処理
   const fetchUserReq = async () => {
@@ -26,6 +30,15 @@ const Home: React.FC = () => {
 
   return (
     <>
+      {isSignedIn && currentUser ? (
+        <>
+          <h1>Signed in successfully!</h1>
+          <h2>Email: {currentUser?.email}</h2>
+          <h2>Name: {currentUser?.name}</h2>
+        </>
+      ) : (
+        <h1>Not signed in</h1>
+      )}
       <h1>userList</h1>
       {userList &&
         userList.map((user) => {

@@ -1,6 +1,6 @@
 //APIサーバーからユーザ情報をもらう
 import { AxiosPromise } from "axios";
 import client from "lib/api/client";
-import { User } from "../../interface/index";
+import { Post } from "../../interface/index";
 
-export const fetchUsers = (): AxiosPromise<User[]> => client.get(`/posts`);
+export const fetchUsers = (): AxiosPromise<Post[]> => client.get(`/posts`);
