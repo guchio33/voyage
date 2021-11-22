@@ -6,6 +6,9 @@ import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
 import { styled } from "@mui/material/styles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {AllPosts} from "./component/All";
+import {NewPost} from "./component/NewPost";
+
 
 const App: React.FC = () => {
   const StyledFab = styled(Fab)({
@@ -23,15 +26,18 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Header />
 
+        
         <StyledFab color="secondary" aria-label="add" href="/post">
           {/*投稿ボタン */}
 
-          <AddIcon to="/post" />
+          <AddIcon to="post" />
         </StyledFab>
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/post" element={<PhotoForm />} />
+          <Route path="/allpost" element={<AllPosts />} />
+          <Route path="/newpost" element={<NewPost />} />
         </Routes>
       </BrowserRouter>
     </>

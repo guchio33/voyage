@@ -188,6 +188,7 @@ DEPENDENCIES
   devise
   devise_token_auth
   listen (~> 3.2)
+  mini_magick
   mini_portile2
   nokogiri
   puma (~> 4.1)

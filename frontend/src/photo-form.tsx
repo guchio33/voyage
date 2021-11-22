@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react'
-import axios from 'axios' 
+import axios from 'axios'
+import { UserApiJson } from "./interface/index"
 
 const PhotoForm: React.FC = () => {
     const [photo, setPhoto] = useState<File>();
@@ -37,10 +38,10 @@ const PhotoForm: React.FC = () => {
     const createFormData = () => {      
         const formData = new FormData()
         if (!photo) return                    //photoがundefinedの場合早期リターン
-            formData.append('post[photo]', photo)
-            formData.append('post[place]', place)
-            formData.append('post[prefecture]', prefecture)
-            formData.append('post[genre]', genre)
+            formData.append('photo', photo)
+            formData.append('place', place)
+            formData.append('prefecture', prefecture)
+            formData.append('genre', genre)
         return formData
     }
     
