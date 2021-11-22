@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create 
     post = Post.new(post_params)
     if post.save
-      render json: { status: 200, post: @post }
+      render json: { status: 200, post: post }
     else
       render json: { status: 500 }
     end
@@ -51,6 +51,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(photo:, :place, :prefecture, :genre)
+    params.require(:post).permit(:photo, :place, :prefecture, :genre)
   end
 end

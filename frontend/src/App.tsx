@@ -26,10 +26,11 @@ const App: React.FC = () => {
       <BrowserRouter>
         <Header />
 
+        
         <StyledFab color="secondary" aria-label="add" href="/post">
           {/*投稿ボタン */}
 
-          <AddIcon to="/post" />
+          <AddIcon to="post" />
         </StyledFab>
 
         <Routes>

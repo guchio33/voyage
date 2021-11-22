@@ -4,14 +4,14 @@ import axios from 'axios'
 
 export const NewPost: VFC = memo(() => {
 
-  const [newPostTitle, setNewPostTitle] = useState("")
-  const [newPostContent, setNewPostContent] = useState("")
+  const [prefecture, setPrefecture] = useState('');
+  const [genre, setGenre] = useState('');
   const [image, setImage] = useState<File | null>(null)
+  const [place, setPlace] = useState('');
 
   const history = useNavigate()
 
-  const handlePostTitle = (e: ChangeEvent<HTMLInputElement>) => setNewPostTitle(e.target.value)
-  const handlePostContent = (e: ChangeEvent<HTMLInputElement>) => setNewPostContent(e.target.value)
+  
   const selectImage = (e: any) => {
     const selectedImage = e.target.files[0]
     setImage(selectedImage)
@@ -21,6 +21,10 @@ export const NewPost: VFC = memo(() => {
     const formData = new FormData()
     if (!image) return
     formData.append('post[photo]', image)
+    formData.append('post[place]', place)
+    formData.append('post[prefecture]', prefecture)
+    formData.append('post[genre]', genre)
+    
     return formData
   }
 
@@ -28,7 +32,7 @@ export const NewPost: VFC = memo(() => {
     const url = 'http://localhost:3001/posts'
     const data = createFormData()
     axios.post(url, data)
-    .then(() => history('/'))
+    .then(() => history('/allpost'))
     .catch(e => {
       console.error(e)
     })
@@ -36,22 +40,15 @@ export const NewPost: VFC = memo(() => {
 
   return (
     <>
-      <div>NEW POST</div>
-      <div>
-        <div>
-          <div>
-            <div>Title</div>
-          </div>
-          <div>
-            <div>Content</div>
-          </div>
-          <div>
-            <div>File</div>
-            <input type="file" onChange={(e) => selectImage(e)} />
-            <button onClick={sendFormData}  color="white" >Create</button>
-          </div>
-        </div>
-      </div>div
+        <div>NEW POST</div>
+        <p>場所：<input type="text" value={place} onChange={(e) => setPlace(e.target.value)} /></p>
+
+        <p>都道府県：<input type="text" value={prefecture} onChange={(e) => setPrefecture(e.target.value)} /></p>
+
+        <p>ジャンル：<input type="text" value={genre} onChange={(e) => setGenre(e.target.value)} /></p>
+        <div>File</div>
+        <input type="file" onChange={(e) => selectImage(e)} />
+        <button onClick={sendFormData}  color="white" >Create</button>
     </>
   )
 })

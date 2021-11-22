@@ -12,8 +12,8 @@ type Props = {
 
 export const PostCard: VFC<Props> = memo((props) => {
 
-  const { postPrefecture, postPlace ,postGenre , id, imageUrl, getAllPosts } = props
 
+  const { postPrefecture, postPlace ,postGenre , id, imageUrl, getAllPosts } = props
   const editPost = () => {
     alert("edit post")
   }
@@ -31,29 +31,14 @@ export const PostCard: VFC<Props> = memo((props) => {
 
   return (
     <div>
-      <img src={imageUrl} />
-
-      <div>
-        <div>
-          <div>
-            {postGenre}
-          </div>
-          <div>
-          </div>
-        </div>
-          {postPlace}
-        </div>
-        <div>
-            {postPrefecture}
-        </div>
-
-        <div>
-            <button onClick={editPost} color="white">Edit</button>
-          </div>
-          <div>
-            <button onClick={() => deletePost(id)} color="white">Delete</button>
-          </div>
-        </div>
+      <img src="./logo192.png" alt="aaa"/>
+      <p>{postPrefecture}</p>
+      <p>{postPlace}</p>
+      <p>{postGenre}</p>
+          
+          <button onClick={editPost} color="white">Edit</button>
+          <button onClick={() => deletePost(id)} color="white">Delete</button>
+    </div>
 
   )
 

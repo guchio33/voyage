@@ -30,8 +30,10 @@ export const AllPosts: VFC = memo(() => {
 
   return (
     <>
-      {posts?.map((post) => (
-            <PostCard id={post.id} postPrefecture={post.prefecture} postGenre={post.genre} postPlace={post.place} imageUrl={post.photo.url} getAllPosts={getAllPosts} />
+      {posts?.map((post,index) => (
+           
+            <PostCard id={post.id} imageUrl={post.photo.url} getAllPosts={getAllPosts} postPrefecture={post.prefecture} postPlace={post.place} postGenre={post.genre}  key={index}/>
+           
       ))}
     </>
   )
