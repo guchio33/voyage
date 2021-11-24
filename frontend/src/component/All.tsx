@@ -12,6 +12,7 @@ export type Post = {
   place: string;
   genre: string;
   prefecture: string;
+  tags: string;
 }
 
 export const AllPosts: VFC = memo(() => {
@@ -34,8 +35,8 @@ export const AllPosts: VFC = memo(() => {
     //投稿が空ならテスト用データを入れる
     if (!posts) {
       setPosts([
-        { id: 0, photo: { url: "sample.png" }, place: "テスト1", genre: "ジャンル1", prefecture: "愛知県" },
-        { id: 1, photo: { url: "sample.png" }, place: "テスト2", genre: "ジャンル2", prefecture: "三重県" }
+        { id: 0, photo: { url: "sample.png" }, place: "テスト1", genre: "ジャンル1", prefecture: "愛知県", tags: "タグ１"},
+        { id: 1, photo: { url: "sample.png" }, place: "テスト2", genre: "ジャンル2", prefecture: "三重県", tags: "タグ２"}
       ])
     }
 
@@ -50,7 +51,7 @@ export const AllPosts: VFC = memo(() => {
         <ImageList sx={{ px: 4, py: 2 }} cols={3} >
           {posts.map((post, index) => (
 
-            <PostCard id={post.id} imageUrl={post.photo.url} getAllPosts={getAllPosts} postPrefecture={post.prefecture} postPlace={post.place} postGenre={post.genre} key={index}
+            <PostCard id={post.id} imageUrl={post.photo.url} getAllPosts={getAllPosts} postPrefecture={post.prefecture} postPlace={post.place} postGenre={post.genre} postTags={post.tags} key={index}
               setShowModal={setShowModal}
               setModalInfo={setModalInfo} />
 

@@ -13,9 +13,9 @@ export const Search: React.FC = () => {
 
     //GET通信処理
     const searchTag = () => {
-        client.get('/serch_tags', {
+        client.get('/searches', {
             params: {
-                tag: tag
+                tag_keyword: tag
             }
         })
             .then((res) => {

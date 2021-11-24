@@ -1,20 +1,11 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show destroy update]
+  before_action :set_post, only: %i[destroy update]
 
   #全投稿を表示（get）
   def index
     posts = Post.all.order(:id)
     render json: posts
-  end
-
-  #投稿を見る（get）
-  def show
-    if @post
-      render json: { status: 200, post: @post }
-    else
-      render json: { status: 500}
-    end
-  end
+  ends
 
   #投稿を作成（post）
   def create 
@@ -51,6 +42,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:photo, :place, :prefecture, :genre)
+    params.require(:post).permit(:photo, :place, :prefecture, :genre, :tags)
   end
 end

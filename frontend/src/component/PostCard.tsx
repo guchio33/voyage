@@ -8,6 +8,7 @@ type Props = {
   postPrefecture: string
   postGenre: string
   postPlace: string
+  postTags: string
   id: number
   imageUrl: string
   getAllPosts: () => void
@@ -19,7 +20,7 @@ type Props = {
 export const PostCard: VFC<Props> = memo((props) => {
 
 
-  const { postPrefecture, postPlace, postGenre, id, imageUrl, getAllPosts } = props
+  const { postPrefecture, postPlace, postGenre, postTags, id, imageUrl, getAllPosts } = props
   const editPost = () => {
     alert("edit post")
   }
@@ -36,7 +37,7 @@ export const PostCard: VFC<Props> = memo((props) => {
   }
 
   return (
-    <div onClick={() => props.setModalInfo({ id: id, photo: { url: imageUrl }, place: postPlace, genre: postGenre, prefecture: postPrefecture })} >
+    <div onClick={() => props.setModalInfo({ id: id, photo: { url: imageUrl }, place: postPlace, genre: postGenre, prefecture: postPrefecture, tags: postTags})} >
       <div onClick={() => props.setShowModal(true)}>
         <Box justifyContent="center" alignItems="center" sx={{ p: 1 }}>
           <Box sx={{ p: 2, bgcolor: '#fff3e0', borderRadius: 4 }}>

@@ -30,6 +30,7 @@ const Modal: VFC<Props> = memo((props) => {
                         <h1>{props.info.place}</h1>
                         <p>{props.info.prefecture}</p>
                         <p>{props.info.genre}</p>
+                        <p>{props.info.tags}</p>
                     </div>
                     <button onClick={closeModal}>Close</button>
                 </div>

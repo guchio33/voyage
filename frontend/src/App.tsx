@@ -28,7 +28,7 @@ const App: React.FC = () => {
         <Header />
 
 
-        <StyledFab color="secondary" aria-label="add" href="/post">
+        <StyledFab color="secondary" aria-label="add" href="/newpost">
           {/*投稿ボタン */}
 
           <AddIcon to="post" />

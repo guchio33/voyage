@@ -25,7 +25,7 @@ export const NewPost: VFC = memo(() => {
     formData.append('post[place]', place)
     formData.append('post[prefecture]', prefecture)
     formData.append('post[genre]', genre)
-    formData.append('post[tag]', tags.join(','))
+    formData.append('post[tags]', tags.join(','))
 
     return formData
   }

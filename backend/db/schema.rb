@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_11_17_092042) do
     t.string "place"
     t.string "prefecture"
     t.string "genre"
+    t.string "tags"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
