@@ -6,8 +6,9 @@ import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
 import { styled } from "@mui/material/styles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {AllPosts} from "./component/All";
-import {NewPost} from "./component/NewPost";
+import { AllPosts } from "./component/All";
+import { NewPost } from "./component/NewPost";
+import { Search } from "./component/Search"
 
 
 const App: React.FC = () => {
@@ -21,15 +22,15 @@ const App: React.FC = () => {
     margin: "0 auto",
   });
 
+
   return (
     <>
       <BrowserRouter>
         <Header />
 
-        
-        <StyledFab color="secondary" aria-label="add" href="/post">
-          {/*投稿ボタン */}
 
+        <StyledFab color="secondary" aria-label="add" href="/newpost">
+          {/*投稿ボタン */}
           <AddIcon to="post" />
         </StyledFab>
 
@@ -38,6 +39,7 @@ const App: React.FC = () => {
           <Route path="/post" element={<PhotoForm />} />
           <Route path="/allpost" element={<AllPosts />} />
           <Route path="/newpost" element={<NewPost />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </BrowserRouter>
     </>

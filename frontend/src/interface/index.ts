@@ -6,6 +6,7 @@ export interface User {
   place: string;
   genre: string;
   prefecture: string;
+  tags: string;
 }
 
 export interface UserApiJson {

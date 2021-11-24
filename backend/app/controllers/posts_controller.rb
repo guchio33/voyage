@@ -44,6 +44,8 @@ class PostsController < ApplicationController
     end
   end
 
+  attr_accessor :keyword
+
   private
 
   def set_post
@@ -51,6 +53,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:photo, :place, :prefecture, :genre)
+    params.require(:post).permit(:photo, :place, :prefecture, :genre, :tags)
   end
 end

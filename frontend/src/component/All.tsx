@@ -10,6 +10,7 @@ type Post = {
     place: string;
     genre: string;
     prefecture: string;
+    tags: string;
 }
 
 export const AllPosts: VFC = memo(() => {
@@ -32,7 +33,7 @@ export const AllPosts: VFC = memo(() => {
     <>
       {posts?.map((post,index) => (
            
-            <PostCard id={post.id} imageUrl={post.photo.url} getAllPosts={getAllPosts} postPrefecture={post.prefecture} postPlace={post.place} postGenre={post.genre}  key={index}/>
+            <PostCard id={post.id} imageUrl={post.photo.url} getAllPosts={getAllPosts} postPrefecture={post.prefecture} postPlace={post.place} postGenre={post.genre} postTags={post.tags} key={index}/>
            
       ))}
     </>

@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :place
       t.string :prefecture
       t.string :genre
+      t.string :tags
 
       t.timestamps
     end

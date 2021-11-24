@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   resources :posts, except: [:new, :edit]
 
-  mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-    registrations: 'auth/registrations'
-  }
+  #mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+  #  registrations: 'auth/registrations'
+  #}
 
-  namespace :auth do
-    resources :sessions, only: %i[index]
-  end
+  #namespace :auth do
+  #  resources :sessions, only: %i[index]
+  #end
+
+  get 'searches', to: 'serches#search'
 end
