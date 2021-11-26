@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   #全投稿を表示（get）
   def index
-    posts = Post.all.order(:id)
+    posts = Post.all.order(id:"DESC")
     render json: posts
   end
 
