@@ -1,22 +1,48 @@
-#content{
-    z-index:2;
-    width:50%;
-    padding: 1em;
-    background:#fff3e0;
-  }
+#content {
+  z-index: 2;
+  width: 50%;
+  padding: 1em;
+  background: #ffffff;
+}
 
-  #overlay{
-    /*　画面全体を覆う設定　*/
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background-color:rgba(0,0,0,0.5);
-    
-      /*　画面の中央に要素を表示させる設定　*/
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    
-    }
+#overlay {
+  /*　画面全体を覆う設定　*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /*　画面の中央に要素を表示させる設定　*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  text-align: center;
+}
+
+.cross {
+  text-align: right;
+  margin-left: 90%;
+  font-size: 10px;
+}
+.place {
+  text-align: center;
+}
+.prefecture {
+  text-align: center;
+}
+
+.genre {
+  text-align: center;
+}
+.photo {
+  width: 50vw;
+  height: 35vw;
+}
+.btn {
+  margin-left: 90%;
+}

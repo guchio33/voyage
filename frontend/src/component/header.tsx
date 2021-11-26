@@ -5,6 +5,9 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
+import Typography from "@mui/material/Typography";
+
+import "../index.css";
 
 export default function Headar() {
   return (
@@ -20,8 +23,16 @@ export default function Headar() {
             sx={{ mr: 2 }}
             href="/"
           >
-            <HomeIcon />
+            <HomeIcon sx={{ fontSize: 40 }} />
           </IconButton>
+          <Typography
+            variant="h3"
+            component="div"
+            sx={{ flexGrow: 1 }}
+            align="justify"
+          >
+            Voyage
+          </Typography>
 
           {/* ヘッダーの真ん中の隙間*/}
           <Box sx={{ flexGrow: 1 }} />
@@ -32,8 +43,9 @@ export default function Headar() {
               aria-label="account of current user"
               aria-haspopup="true"
               color="inherit"
+              href="/mypage"
             >
-              <AccountCircle />
+              <AccountCircle sx={{ fontSize: 40 }} />
             </IconButton>
           </Box>
         </Toolbar>
