@@ -1,19 +1,18 @@
 //import React, { useEffect, useState } from "react";
-import PhotoForm from "./photo-form";
 import Header from "./component/header";
-import Home from "./component/home";
 import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
 import { styled } from "@mui/material/styles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AllPosts } from "./component/All";
-import { NewPost } from "./component/NewPost";
-import { Search } from "./component/Search"
-
+import { AllPosts } from "./component/pages/All";
+import { NewPost } from "./component/pages/NewPost";
+import { Search } from "./component/Search";
+import Map from "./component/pages/Map";
+import Mypage from "./component/pages/mypage";
 
 const App: React.FC = () => {
   const StyledFab = styled(Fab)({
-    position: "absolute",
+    position: "fixed",
     textAlign: "left",
     zIndex: 1,
     top: "90%",
@@ -23,26 +22,25 @@ const App: React.FC = () => {
   });
 
   return (
-    <>
+    <div className="background">
       <BrowserRouter>
         <Header />
 
-
-        <StyledFab color="secondary" aria-label="add" href="/post">
+        <StyledFab color="secondary" aria-label="add" href="/newpost">
           {/*投稿ボタン */}
 
           <AddIcon to="post" />
         </StyledFab>
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/post" element={<PhotoForm />} />
-          <Route path="/allpost" element={<AllPosts />} />
+          <Route path="/" element={<AllPosts />} />
           <Route path="/newpost" element={<NewPost />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/mypage" element={<Mypage />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 
